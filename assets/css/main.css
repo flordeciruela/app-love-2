@@ -1,5 +1,4 @@
 /*CLASES REUTILIZABLES*/
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -108,6 +107,10 @@ color: white;
 padding: 70px;
 }
 
+#home p {
+color: #c6c7c5;
+}
+
 .text-home {
 font-size: 53px;
 }
@@ -132,6 +135,9 @@ color: #fff;
 padding: 70px 7px;
 }
 
+#services h5, h6 {
+font-weight: 500;
+}
 .box-services {
 display: inline-block;
 width: 30%;
@@ -143,17 +149,24 @@ font-size: 35px;
 letter-spacing: 2px;
 }
 
-footer {
-text-align: center;
-height: 70px;
-background: #373B47;
-color: white;
-padding-top: 7px;
-}
-
 /*contenedor popupp*/
 #work {
 text-align: center;
+padding-top: 35px;
+color: #373B47;
+}
+
+.box-images figure {
+display: inline-block;
+margin: 30px;
+}
+
+.box-images img {
+width: 300px;
+}
+
+#work figcaption, [alt="hero"]{
+padding-top: 20px;
 }
 
 .modal-wrapper {
@@ -165,7 +178,7 @@ text-align: center;
 .modal-wrapper:target {
    visibility:visible;
    opacity: 1;
-   background-color: rgba(0,0,0,0.8);
+   background-color: rgba(46, 204, 113, 0.9);
    position: fixed;
    top:0;
    left:0;
@@ -179,22 +192,26 @@ text-align: center;
 }
 .popup-contenedor {
    position: relative;
-   margin:2% auto;
+   margin: 25px auto;
    padding:10px;
-   background-color: #fafafa;
-   color:#333;
-   width:50%;
-   text-align: center;
+   background-color: white;
+   width: 55%;
 }
 a.popup-cerrar {
    position: absolute;
-   top:3px;
-   right:3px;
-   background-color: #333;
-   padding:7px 10px;
-   font-size: 20px;
+   top: 0;
+   right: 0;
+   margin: 0 16px 0 0;
+   font-size: 30px;
+	 font-weight: 600;
    text-decoration: none;
-   line-height: 1;
-   color:#fff;
+   color:#2ECC71;
 }
 /*http://soyfrontend.com/crear-ventana-modal-con-solo-css/*/
+footer {
+text-align: center;
+height: 70px;
+background: #373B47;
+color: white;
+padding-top: 7px;
+}
