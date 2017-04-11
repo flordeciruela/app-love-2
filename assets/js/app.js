@@ -1,12 +1,12 @@
 
-var galeryBox = document.getElementById('box-images');// contenedor donde se almacenarán las imgagenes.
+var galeryBox = document.getElementById('box-images');// contenedor donde se almacenarán las imagenes.
 var ruta = "assets/images/img-"; //ruta principal de las fotos.
 var images = new Array(); //Array de objetos por imagen.
 
 function galery(){ //Funcion para imprimir imagenes.
 
 	var fragContainer = document.createDocumentFragment();
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i < 12; i++) {
 
 			var url = ruta + (i+1) + ".jpg";
 			var name = "PROYECTO "+ (i+1);
@@ -33,27 +33,32 @@ function galery(){ //Funcion para imprimir imagenes.
 }
 galery();
 /*
-var links = document.getElementsByClassName('popup-link');
-	for (var i in links) {
-		links[i].addEventListener('click',function(event) {
-		event.preventDefault();
-
-			var identifier = "image-"+ (i+1);
-			var ruta = images[i].url;
-
-			document.getElementsByClassName("modal-wrapper").setAttribute("id", identifier);
-			document.getElementById('full-image').setAttribute("src", ruta);
-		});
-	}*/
 var popupBox = document.getElementById("popup-contain");
 function popup(){
-	var 
+
+	for (var i in images) {
+		var identifier = "image-"+ (parseInt(i)+1);
+
+		var modal = document.createElement("div");
+		modal.classList.add("modal-wrapper");
+		modal.setAttribute("id", identifier);
+
+		var popUp = document.createElement("div");
+		popUp.classList.add("popup-contenedor");
+		var photo = document.createElement("img");
+		photo.setAttribute("src", images[i].url);
+		photo.setAttribute("width", "100%");
+		var x = document.createElement("a");
+		x.classList.add("popup-cerrar");
+		x.setAttribute("href", images[i].link);
+		x.innerHTML = "x";
+
+		popUp.appendChild(photo);
+		popUp.appendChild(x);
+		modal.appendChild(popUp);
+		popupBox.appendChild(modal);
+	}
+
 }
-/*
-<div class="modal-wrapper" id="image-1">
-		<div class="popup-contenedor">
-			<img src="assets/images/img-1.jpg" alt="" width="100%">
-			<a class="popup-cerrar" href="#work">x</a>
-		</div>
-</div>
+popup();
 */
